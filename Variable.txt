@@ -1,0 +1,74 @@
+
+/*
+//Variable in Kotlin Basic Term
+
+
+
+        var changeable=15;
+             changeable=20;
+        val unchangeable=40;
+
+        var stringVariable="Hello World";
+
+        var boleeanForm=false;
+
+
+        var nullVariable: String?
+        nullVariable=null
+
+
+//For Loop In Kotlin
+
+
+        for (i in 1..10) print(i)
+        println()
+
+        //Reverse for loop
+        for(i in 10 downTo 1) print(i)
+        println()
+
+        //
+        for (i in 1..10 step 2)print(i)
+        println()
+        //output 1 3 5 7 9
+
+        //
+        for (i in 10 downTo 1 step 2) print(i)
+        println()
+        // output 10 8 6 4 2 
+
+
+
+    }
+}
+*/
+
+
+
+
+fun  main(){
+    
+     
+    
+    
+    var(v1,v2,v3)=arrayOf(2022,"Happy New Year is ", true)
+    println("$v1 $v2 $v3")
+    
+    //what is for loop
+
+   // for(i in 1..10)
+    //print(i)
+    
+    //for(i in 1..10 step 3)
+    //print(i)
+    //
+    for(i in 10 downTo 1)
+    print(i)
+
+    
+}
+
+    
+    
+    
+    

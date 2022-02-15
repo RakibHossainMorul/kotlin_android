@@ -1,0 +1,41 @@
+
+fun main(){
+    var winNumber=5
+    var storeClass=Dice()
+    var rollResult=storeClass.roll()
+    println("Total Sides ${storeClass.totalSides} then Rolled ${rollResult}")
+    controlFlow(rollResult,winNumber)
+    
+    
+    
+    
+    
+}
+​
+fun controlFlow(rollResult:Int,winNumber:Int){
+    
+    when(rollResult){
+        winNumber-> println("WIIIIIN 555555")
+        1->println("Rolled 1")
+        2->println("Rolled 2")
+        3->println("Rolled 3")
+        4->println("Rolled 4")
+        6->println("Rolled 6")
+    }
+    
+}
+​
+​
+​
+class Dice(){
+    
+    var totalSides=6
+    
+    fun roll():Int{
+        return(1..totalSides).random()
+    }
+    
+    
+    
+    
+}

@@ -1,0 +1,83 @@
+import kotlin.math.sqrt
+import kotlin.math.PI
+
+
+fun main(){
+    var square_cabin=square_Cabin("Square Cabin","WOOD",10,100,7.46)
+    var round_hut=round_Hut("Round Hut","Platinum",20,10,5.44)
+    var round_tower=round_Tower("Round Tower","Rood",30,6.44,50)
+    
+    with(square_cabin){
+        println(titleObject)
+        println("---------")
+        println("Building MAterial: ${buildingMaterial}")
+        println("Capacity : ${capacity}")
+        println("Floor Area : ${floorArea()}")
+    }
+    with(round_hut){
+        println(titleObject)
+        println("---------")
+        println("Building MAterial: ${buildingMaterial}")
+        println("Capacity : ${capacity}")
+        println("Floor Area : ${floorArea()}")
+        println("Carpet Size : ${carpetArea()}")
+        println("Is there any room: ${hasRoom()}")
+        println(getRoom())
+    }
+     with(round_tower){
+        println(titleObject)
+        println("---------")
+        println("Building MAterial: ${buildingMaterial}")
+        println("Capacity : ${capacity}")
+        println("Floor Area : ${floorArea()}")
+        println("Carpet Size : ${carpetArea()}")
+    }
+    
+    
+    
+    
+    
+    
+    
+}
+
+open class Home(var titleObject:String,var buildingMaterial:String,var capacity:Int,var residents:Int){
+    
+    fun hasRoom():Boolean{
+        return residents<capacity
+    }
+    fun getRoom(){
+        if(residents<capacity){
+            println("Welcome ! You got a Room")
+        }
+        else{
+            println("Sorry, There is no room today")
+        }
+    }
+    
+    
+}
+
+class square_Cabin(titleObject:String,buildingMaterial:String,capacity:Int,residents:Int,var length:Double):Home(titleObject,buildingMaterial,capacity,residents){
+      fun floorArea():Double{
+        return length*length
+        
+    }
+}
+open class round_Hut(titleObject:String,buildingMaterial:String,capacity:Int,residents:Int,var radius:Double):Home(titleObject,buildingMaterial,capacity,residents){
+     open fun floorArea():Double{
+        return PI*radius*radius
+    }
+    fun carpetArea():Double{
+        
+        var diameter=2*radius
+        return sqrt(diameter*diameter/2)
+    }
+    
+}
+class round_Tower(titleObject:String,buildingMaterial:String,capacity:Int,radius:Double,residents:Int,var floors:Int=2):round_Hut(titleObject,buildingMaterial,capacity,residents,radius){
+     override fun floorArea():Double{
+        return super.floorArea()*floors
+    }
+ 
+}
